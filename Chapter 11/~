@@ -1,0 +1,25 @@
+#include<stdio.h>
+#define SIZE 81
+void fetchar(char * string, char * input, int n);
+int main(void)
+{
+	char input[SIZE];
+	char copy[SIZE];
+	
+	puts("Please enter a string:");
+	gets(input);
+	fetchar(copy,input,9);
+	puts(copy);
+	
+	return 0;
+}
+void fetchar(char * string, char * input, int n)
+{
+	int i = 0;
+	while(i < n && input[i] != '\0')
+	{
+		string[i] = input[i];
+		i++
+	}
+}
+

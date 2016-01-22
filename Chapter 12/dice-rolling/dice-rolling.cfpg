@@ -1,0 +1,6 @@
+<Projects version="2.0">
+	<Project active="1">dice-rolling.cfp</Project>
+	<File active="0">manydice.c</File>
+	<File active="0">diceroll.h</File>
+	<File active="1">diceroll.c</File>
+</Projects>

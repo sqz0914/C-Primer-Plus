@@ -1,0 +1,9 @@
+<Projects version="2.0">
+	<Project active="1">header.cfp</Project>
+	<File active="0">..\preproc.c</File>
+	<File active="0">..\mac_arg.c</File>
+	<File active="0">..\subst.c</File>
+	<File active="0">..\glue.c</File>
+	<File active="0">..\variadic.c</File>
+	<File active="1">..\ifdef.c</File>
+</Projects>

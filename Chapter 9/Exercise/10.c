@@ -1,0 +1,27 @@
+#include<stdio.h>
+unsigned long Fibonacci(int n);
+int main(void)
+{
+	int n;
+	printf("Please enter an unsigned integer:");
+	scanf("%d",&n);
+	printf("The corresponding Fibonacci number is %lu.\n",Fibonacci(n));
+}
+
+unsigned long Fibonacci(int n)
+{
+	unsigned long ans,prev1,prev2;
+	int i;
+	if(n > 2)
+	{
+	    for(i = 3,prev1 = 1,prev2 = 1,ans = 0;i <= n;i++)
+		{   ans  = prev1 + prev2;
+		    prev2 = prev1;
+		    prev1 = ans;
+		}
+	}
+	else
+	ans = 1;
+	
+	return ans;
+}

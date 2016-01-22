@@ -1,0 +1,14 @@
+#include <stdio.h>
+#define HARMONIC(X,Y) (2/((1/(X))+(1/(Y))))
+
+int main(void)
+{
+	int x,y;
+	while(scanf("%d %d", &x, &y) == 2)
+	{
+		printf("The harmonic mean of %d and %d is %.2f\n", x, y, HARMONIC(x,y));
+	}
+	
+	return 0;
+}
+

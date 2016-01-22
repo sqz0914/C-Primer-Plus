@@ -1,0 +1,24 @@
+#include<stdio.h>
+#define SIZE 10
+#define PAR 72
+int main(void)
+{
+	int count,sum;
+	float average,handicap;
+	int scores[SIZE];
+	
+	printf("Enter 10 golf scores:\n");
+	for(count = 0;count < SIZE;count++)
+	   scanf("%d",scores[count]);
+    printf("The scores read in are as follows:\n");
+    for(count = 0;count < SIZE;count++)
+       printf("%5d",scores[count]);
+    printf("\n");
+    for(count = 0,sum = 0;count < SIZE;sum += scores[count],count++);
+    average = (float)sum/SIZE;
+    printf("Sum of scores = %d, average = %.2f\n",sum,average);
+    printf("That's a handicap of %f.\n",average - PAR);
+    
+    return 0;    
+}
+

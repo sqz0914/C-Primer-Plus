@@ -1,0 +1,13 @@
+#include<stdio.h>
+int main(void)
+{
+	int input;
+	char print;
+	printf("Please enter a integer ");
+	scanf("%d",&input);
+	print = 'input';
+	printf("\n%c",print);
+	getchar();
+	return 0;
+}
+

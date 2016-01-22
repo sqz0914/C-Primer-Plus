@@ -1,0 +1,101 @@
+#include<stdio.h>
+#include<string.h>
+#include<ctype.h>
+#define SCORES 3
+#define CSIZE 4
+#define LEN 20
+
+struct name {
+	char fname[LEN];
+	char sname[LEN];
+};
+
+struct student {
+	struct name handle;
+	float grade[SCORES];
+	float average;
+};
+
+void get_info(struct student info);
+void aver(struct student info);
+void show_info(struct student info);
+void trans(char * ptr);
+
+int main(void)
+{
+	int index;
+	struct student info[CSIZE] {
+		{.handle = {"Shen","Qizhuo"}},
+		{.handle = {"Sun","Yuefan"}},
+		{.handle = {"Xia","Lei"}},
+		{.handle = {"Xu","Zhiming"}}
+	};
+	for(index = 0; index < CSIZE; index++)
+	{
+		get_info(info[index]);
+	    aver(info[index]);
+	    show_info(info[index]);
+	}
+	
+	return 0;
+}
+
+void get_info(struct student info)
+{
+	char finput[LEN];
+	char sinput[LEN];
+	int index;
+	
+	puts("Please enter the first name of the student (empty line to qiut) :");
+	while(gets(finput) != NULL && finput[0] != '\0')
+	{
+		trans(finput);
+        puts("Please enter the second name of the student:");
+        gets(sinput);
+        trans(sinput);
+        if(strcmp(finput,info.handle.fname) == 0 && strcmp(sinput,info.handle.sname) == 0)
+        {
+        	puts("Enter the first score:");
+        	for(index = 0; index < SCORES; index++)
+   	        {
+        	   	scanf("%f",&info.grade[index]);
+        	   	puts("Next score:");
+     	    }
+        }
+        else
+        {
+        	puts("Can't find the student. Try again.");
+       		puts("Please enter the first name of the student (empty line to qiut) :");
+        	continue;
+        }
+       	puts("Please enter the first name of the student (empty line to qiut) :");
+	}	
+}
+
+void trans(char * ptr)
+{
+	int index;
+    ptr[0] = toupper(prt[0]);
+    for(index = 1; index < strlen(ptr); index++)
+    	ptr[index] = tolower(ptr[index]);
+}
+
+void aver(struct student info)
+{
+	int index;
+	float total;
+	
+	for(index = 0,total = 0; index < SCORES; index++)
+	    total += info.grade[index];
+    info.average = total / SCORES;
+}
+
+void show_info(struct student info)
+{
+	int index;
+	printf("The scores of %s %s:\n",info.handle.fname,info.handle.sname);
+	for(index = 0; index < SCORES; index++)
+	    printf("%7.2f",info.grade[index]);
+    printf("\nThe average score is %.2f\n",info.average);
+}
+
